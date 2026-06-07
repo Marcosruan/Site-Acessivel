@@ -1,3 +1,5 @@
+import logo from "../../assets/logo_do_site_acessivel.png";
+
 type HeaderProps = {
   titulo: string;
 };
@@ -5,7 +7,12 @@ type HeaderProps = {
 export function Header({ titulo }: HeaderProps) {
   return (
     <header>
-      <img src="" alt="Logo do site acessível" />
+      <img
+        src={logo}
+        alt="Logo do site acessível"
+        width="108px"
+        height="108px"
+      />
       <h1>{titulo}</h1>
       <hr />
     </header>

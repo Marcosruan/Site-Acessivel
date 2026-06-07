@@ -1,23 +1,32 @@
-import { Section } from "../section";
-import { Article } from "../article";
+import { SectionExercicio } from "../section/sectionExercicio";
+import { SectionLink } from "../section/sectionLink";
+import { ArticleHeader } from "../article/articleHeader";
+import { ArticleBody } from "../article/articleBody";
+import type { Conteudo, Estados } from "../../App";
 
 type MainProps = {
-  opcao: "matérias" | "seções"
-}
+  area: Estados["area"];
+  conteudo: Conteudo;
+};
 
-export function Main({opcao}: MainProps) {
-  if (opcao === "matérias") {
+export function Main({ area , conteudo}: MainProps) {
+  if (area === "matérias") {
     return (
       <main>
-        <Article/ >
-        <Article/ >
+        <ArticleHeader conteudo={conteudo} />
+        <ArticleBody />
       </main>
-    )
+    );
+  } else if (area == "home") {
+    return (
+      <main>
+        <SectionExercicio />
+      </main>
+    );
   }
   return (
     <main>
-      <Section />
-      <Section />
+      <SectionLink />
     </main>
   );
 }

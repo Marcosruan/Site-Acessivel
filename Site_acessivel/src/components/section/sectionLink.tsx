@@ -1,6 +1,6 @@
 import { A } from "../link";
 
-export function Section() {
+export function SectionLink() {
   return (
     <section>
       <A />
