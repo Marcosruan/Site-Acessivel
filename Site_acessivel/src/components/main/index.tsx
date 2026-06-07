@@ -7,9 +7,11 @@ import type { Conteudo, Estados } from "../../App";
 type MainProps = {
   area: Estados["area"];
   conteudo: Conteudo;
+  setArea: (area: Estados["area"]) => void;
+  setConteudo: (materia: string) => void;
 };
 
-export function Main({ area , conteudo}: MainProps) {
+export function Main({ area, conteudo, setArea, setConteudo }: MainProps) {
   if (area === "matérias") {
     return (
       <main>
@@ -26,7 +28,12 @@ export function Main({ area , conteudo}: MainProps) {
   }
   return (
     <main>
-      <SectionLink />
+      <SectionLink
+        area={area}
+        materia="materia1"
+        setArea={setArea}
+        setConteudo={setConteudo}
+      />
     </main>
   );
 }

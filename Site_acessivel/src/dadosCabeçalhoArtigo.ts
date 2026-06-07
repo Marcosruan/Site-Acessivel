@@ -1,6 +1,6 @@
 import type { Conteudo } from "./App";
 
-export const artigos: Conteudo[] = [
+export const cabeçalhosDosArtigos: Conteudo[] = [
   {
     materia: "Matéria 1",
     titulo: "Título da matéria 1",
