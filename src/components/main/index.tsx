@@ -30,8 +30,8 @@ export function Main({ area, conteudo, setArea, setConteudo }: MainProps) {
       <section>
         {" "}
         <h2 className="text-center text-gray-700 mb-8">Matéria</h2>
-      </section>
       <SectionHome setArea={setArea} setConteudo={setConteudo} />
+      </section>
     </main>
   );
 }
