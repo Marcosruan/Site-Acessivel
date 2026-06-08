@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Header } from "./components/header";
 import { Main } from "./components/main";
 import { Footer } from "./components/footer";
-import { cabeçalhosDosArtigos } from "./dadosCabeçalhoArtigo";
+import { conteudosDosArtigos } from "./conteudos";
 import "./App.css";
 
 export type Estados = {
@@ -15,16 +15,18 @@ export type Conteudo = {
   titulo: string | null;
   autor: string | null;
   data: string | null;
+  textos: string[] | null
 };
 
 function App() {
   const [state, setState] = useState<Estados>({
-    area: "matérias",
+    area: "home",
     conteudo: {
       materia: null,
       titulo: null,
       autor: null,
       data: null,
+      textos: null
     },
   });
 
@@ -39,7 +41,7 @@ function App() {
   }
 
   function setConteudo(materia: string) {
-    const artigo = cabeçalhosDosArtigos.find((item) => item.materia === materia);
+    const artigo = conteudosDosArtigos.find((item) => item.materia === materia);
     if (artigo) {
       setNomeMateria(artigo)
     }
@@ -47,7 +49,7 @@ function App() {
 
   return (
     <>
-      <Header titulo="Site Acessível" />
+      <Header area="home" setArea={setArea} titulo="Site Acessível" />
       <Main
         area={state.area}
         conteudo={state.conteudo}

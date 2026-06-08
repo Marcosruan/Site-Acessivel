@@ -4,7 +4,7 @@ type ArticleHeaderProps = {
   conteudo: Conteudo;
 };
 
-export function ArticleHeader({conteudo}: ArticleHeaderProps) {
+export function Article({conteudo}: ArticleHeaderProps) {
   return (
     <article>
       <p>{conteudo.materia}</p>

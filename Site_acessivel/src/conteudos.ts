@@ -1,56 +1,94 @@
-export const CorpoArtigos = [
+import type { Conteudo } from "./App";
+
+export const conteudosDosArtigos: Conteudo[] = [
   {
-    texto1a:
+    materia: "Matéria 1",
+    titulo: "Título da matéria 1",
+    autor: "Marcos",
+    data: "07/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto1b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
   {
-    texto2a:
+    materia: "Matéria 2",
+    titulo: "Título da matéria 2",
+    autor: "Ruan",
+    data: "08/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto2b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
   {
-    texto3a:
+    materia: "Matéria 3",
+    titulo: "Título da matéria 3",
+    autor: "Carlos",
+    data: "09/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto3b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
   {
-    texto4a:
+    materia: "Matéria 4",
+    titulo: "Título da matéria 4",
+    autor: "Miguel",
+    data: "10/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto4b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
   {
-    texto5a:
+    materia: "Matéria 5",
+    titulo: "Título da matéria 5",
+    autor: "Luan",
+    data: "11/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto5b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
   {
-    texto6a:
+    materia: "Matéria 6",
+    titulo: "Título da matéria 6",
+    autor: "Richas",
+    data: "12/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto6b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
   {
-    texto7a:
+    materia: "Matéria 7",
+    titulo: "Título da matéria 7",
+    autor: "Isaac",
+    data: "13/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto7b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
   {
-    texto8a:
+    materia: "Matéria 8",
+    titulo: "Título da matéria 8",
+    autor: "Thales",
+    data: "14/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto8b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
   {
-    texto9a:
+    materia: "Matéria 9",
+    titulo: "Título da matéria 9",
+    autor: "Jonnas",
+    data: "15/06/2026",
+    textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-    texto9b:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+    ],
   },
 ];

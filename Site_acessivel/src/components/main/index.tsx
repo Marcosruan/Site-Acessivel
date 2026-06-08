@@ -1,7 +1,7 @@
 import { SectionExercicio } from "../section/sectionExercicio";
-import { SectionLink } from "../section/sectionLink";
-import { ArticleHeader } from "../article/articleHeader";
-import { ArticleBody } from "../article/articleBody";
+
+import { SectionHome } from "../section/sectionHome";
+import { Article } from "../article";
 import type { Conteudo, Estados } from "../../App";
 
 type MainProps = {
@@ -14,26 +14,24 @@ type MainProps = {
 export function Main({ area, conteudo, setArea, setConteudo }: MainProps) {
   if (area === "matérias") {
     return (
-      <main>
-        <ArticleHeader conteudo={conteudo} />
-        <ArticleBody />
+      <main className="p-8">
+        <Article conteudo={conteudo} />
       </main>
     );
-  } else if (area == "home") {
+  } else if (area == "exercícios") {
     return (
-      <main>
+      <main className="p-8">
         <SectionExercicio />
       </main>
     );
   }
   return (
-    <main>
-      <SectionLink
-        area={area}
-        materia="materia1"
-        setArea={setArea}
-        setConteudo={setConteudo}
-      />
+    <main className="p-8">
+      <section>
+        {" "}
+        <h2 className="text-center text-gray-700 mb-8">Matéria</h2>
+      </section>
+      <SectionHome setArea={setArea} setConteudo={setConteudo} />
     </main>
   );
 }
