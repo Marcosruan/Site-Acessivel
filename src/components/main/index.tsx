@@ -1,4 +1,5 @@
 import { SectionExercicio } from "../section/sectionExercicio";
+import { AExercise } from "../exerciseATag";
 
 import { SectionHome } from "../section/sectionHome";
 import { Article } from "../article";
@@ -37,41 +38,8 @@ export function Main({ area, conteudo, setArea, setConteudo }: MainProps) {
 
         <article className="grid md:grid-cols-2 gap-6">
 
-          <a onClick={() => setArea("exercícios")} className="border border-slate-300 flex bg-gray-50">
-            <div
-              className="w-16 flex items-center justify-center border-r border-slate-300 text-2xl text-gray-400">
-              🖼️
-            </div>
-
-            <div className="p-4">
-              <h3 className="font-semibold text-sm mb-2">
-                Exercício 1
-              </h3>
-
-              <p className="text-xs text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Donec cursus ex, faucibus blandit tristique, magna ante dictum.
-              </p>
-            </div>
-          </a>
-
-          <a onClick={() => setArea("exercícios")} className="border border-slate-300 flex bg-gray-50">
-            <div
-              className="w-16 flex items-center justify-center border-r border-slate-300 text-2xl text-gray-400">
-              🖼️
-            </div>
-
-            <div className="p-4">
-              <h3 className="font-semibold text-sm mb-2">
-                Exercício 2
-              </h3>
-
-              <p className="text-xs text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Donec cursus ex, faucibus blandit tristique, magna ante dictum.
-              </p>
-            </div>
-          </a>
+          <AExercise text="Exercício 1" setArea={setArea} />
+          <AExercise text="Exercício 2" setArea={setArea} />
 
         </article>
       </section>
