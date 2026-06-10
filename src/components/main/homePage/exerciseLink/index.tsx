@@ -13,14 +13,14 @@ export function ExerciseLink({ text, setArea, getExercicio }: AExerciseProps) {
         setArea("exercícios");
         getExercicio(text);
       }}
-      className="border border-slate-300 flex bg-gray-50"
+      className="group bg-white border rounded-md border-[#ADACB1] hover:border-[#0973F0] flex"
     >
-      <div className="w-16 flex items-center justify-center border-r border-slate-300 text-2xl text-gray-400">
+      <div className="w-16 flex items-center justify-center rounded-l-md text-2xl text-gray-400 bg-[#064EA4] group-hover:bg-[#0461CF] transition-colors duration-300">
         🖼️
       </div>
 
       <div className="p-4">
-        <h3 className="font-semibold text-sm mb-2">{text}</h3>
+        <h3 className="font-bold text-sm mb-2">{text}</h3>
 
         <p className="text-xs text-gray-600">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec cursus

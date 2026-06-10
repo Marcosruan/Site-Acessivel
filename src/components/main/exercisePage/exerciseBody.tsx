@@ -8,9 +8,9 @@ type ExerciseBodyProps = {
 
 export function ExerciseBody({ questionNumber, exercicio }: ExerciseBodyProps) {
   return (
-    <article className="border border-slate-300 bg-white">
-      <header className="bg-slate-200 px-4 py-3">
-        <h3 className="text-sm font-medium text-slate-700">{questionNumber}</h3>
+    <article className="border rounded-md border-slate-300 bg-white">
+      <header className="bg-[#043773] rounded-t-md px-4 py-3">
+        <h3 className="text-sm font-medium text-white">{questionNumber}</h3>
       </header>
 
       <div className="p-5">

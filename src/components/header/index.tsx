@@ -9,12 +9,12 @@ type HeaderProps = {
 
 export function Header({ titulo, area, setArea}: HeaderProps) {
   return (
-    <header className = "flex items-center width-full height-[132px] gap-3 px-4 py-4 border-b-2 border-[#2187FF] shadow-[0_5px_10px_rgba(4,97,207,0.50)]">
+    <header className = "flex bg-white items-center width-full height-[132px] gap-3 px-4 py-4 border-b-2 border-[#2187FF] shadow-[0_5px_10px_rgba(4,97,207,0.50)]">
       <img
         src={logo}
         alt="Logo do site acessível"
-        width="108px"
-        height="108px"
+        width="68px"
+        height="68px"
         className="ml-24"
       />
       <a onClick={() => setArea(area)}>

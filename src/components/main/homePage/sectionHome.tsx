@@ -8,7 +8,7 @@ type SectionHomeProps = {
 
 export function SectionHome({ setArea, setConteudo }: SectionHomeProps) {
   return (
-    <section className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
+    <section className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
       <SectionLink
         area={"matérias"}
         materia="Matéria 1"
