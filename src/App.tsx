@@ -2,12 +2,23 @@ import { useState } from "react";
 import { Header } from "./components/header";
 import { Main } from "./components/main";
 import { Footer } from "./components/footer";
-import { conteudosDosArtigos } from "./conteudos";
+import { conteudosDosArtigos } from "./matériasMock";
 import "./App.css";
+import { questionarioMock } from "./questionátiosMock";
 
 export type Estados = {
   area: "matérias" | "home" | "exercícios";
   conteudo: Conteudo;
+  exercicio: Exercicio;
+};
+
+export type Exercicio = {
+  pergunta: string | null;
+  opcao1: string | null;
+  opcao2: string | null;
+  opcao3: string | null;
+  opcao4: string | null;
+  opcao5: string | null;
 };
 
 export type Conteudo = {
@@ -15,7 +26,7 @@ export type Conteudo = {
   titulo: string | null;
   autor: string | null;
   data: string | null;
-  textos: string[] | null
+  textos: string[] | null;
 };
 
 function App() {
@@ -26,7 +37,15 @@ function App() {
       titulo: null,
       autor: null,
       data: null,
-      textos: null
+      textos: null,
+    },
+    exercicio: {
+      pergunta: null,
+      opcao1: null,
+      opcao2: null,
+      opcao3: null,
+      opcao4: null,
+      opcao5: null,
     },
   });
 
@@ -34,7 +53,7 @@ function App() {
     setState((prev) => ({ ...prev, area }));
   }
 
-  function setNomeMateria(artigo: Conteudo) {
+  function setMateria(artigo: Conteudo) {
     setState((prev) => {
       return { ...prev, conteudo: artigo };
     });
@@ -43,7 +62,20 @@ function App() {
   function setConteudo(materia: string) {
     const artigo = conteudosDosArtigos.find((item) => item.materia === materia);
     if (artigo) {
-      setNomeMateria(artigo)
+      setMateria(artigo);
+    }
+  }
+
+  function setExercicio(exercicio: Exercicio) {
+    setState((prev) => {
+      return { ...prev, exercicio };
+    });
+  }
+
+  function getExercicio(questao: string) {
+    const exercicio = questionarioMock.find((item) => item.questao === questao);
+    if (exercicio) {
+      setExercicio(exercicio);
     }
   }
 
@@ -55,6 +87,8 @@ function App() {
         conteudo={state.conteudo}
         setArea={setArea}
         setConteudo={setConteudo}
+        exercicio={state.exercicio}
+        getExercicio={getExercicio}
       />
       <Footer />
     </>

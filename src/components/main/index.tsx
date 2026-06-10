@@ -1,18 +1,20 @@
-import { SectionExercicio } from "../section/sectionExercicio";
 import { AExercise } from "../exerciseATag";
-
 import { SectionHome } from "../section/sectionHome";
 import { Article } from "../article";
-import type { Conteudo, Estados } from "../../App";
+import type { Conteudo, Estados, Exercicio } from "../../App";
+import { ExerciseHeader } from "../exercisePage/exerciseHeader";
+import { ExerciseBody } from "../exercisePage/exerciseBody";
 
 type MainProps = {
   area: Estados["area"];
   conteudo: Conteudo;
   setArea: (area: Estados["area"]) => void;
   setConteudo: (materia: string) => void;
+  exercicio: Exercicio;
+  getExercicio: (questao: string) => void;
 };
 
-export function Main({ area, conteudo, setArea, setConteudo }: MainProps) {
+export function Main({ area, conteudo, setArea, setConteudo, exercicio, getExercicio }: MainProps) {
   if (area === "matérias") {
     return (
       <main className="p-8">
@@ -21,15 +23,15 @@ export function Main({ area, conteudo, setArea, setConteudo }: MainProps) {
     );
   } else if (area == "exercícios") {
     return (
-      <main className="p-8">
-        <SectionExercicio />
+      <main className="px-6 py-8">
+        <ExerciseHeader />
+        <ExerciseBody questionNumber="Questão 1" exercicio={exercicio} />
       </main>
     );
   }
   return (
     <main className="p-8">
       <section>
-        {" "}
         <h2 className="text-center text-gray-700 mb-8">Matéria</h2>
         <SectionHome setArea={setArea} setConteudo={setConteudo} />
       </section>
@@ -38,8 +40,8 @@ export function Main({ area, conteudo, setArea, setConteudo }: MainProps) {
 
         <article className="grid md:grid-cols-2 gap-6">
 
-          <AExercise text="Exercício 1" setArea={setArea} />
-          <AExercise text="Exercício 2" setArea={setArea} />
+          <AExercise text="Exercício 1" setArea={setArea} getExercicio={getExercicio} />
+          <AExercise text="Exercício 2" setArea={setArea} getExercicio={getExercicio} />
 
         </article>
       </section>
