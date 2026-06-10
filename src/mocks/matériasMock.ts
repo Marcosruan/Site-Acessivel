@@ -1,4 +1,4 @@
-import type { Conteudo } from "./App";
+import type { Conteudo } from "../App";
 
 export const conteudosDosArtigos: Conteudo[] = [
   {
@@ -8,7 +8,7 @@ export const conteudosDosArtigos: Conteudo[] = [
     data: "07/06/2026",
     textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus, ex faucibus blandit tristique, magna ante dictum est, et tincidunt dolorfelis quis magna. Nunc rhoncus vel massa vel tincidunt. Aenean at mienim. Cras commodo purus purus, vel tristique enim semper a. Donecdapibus turpis vitae placerat pharetra. Vestibulum pharetra erat tellus,eu finibus lectus suscipit in. Cras lacinia in nisl condimentum congue.Nullam et quam in tellus pellentesque accumsan at id velit. Proin egetcongue diam, sit amet lobortis sem. Ut eget euismod urna. Nulla idvolutpat lacus. Vestibulum tincidunt ultrices arcu, a malesuada nislaliquam vel",
     ],
   },
   {
@@ -18,7 +18,7 @@ export const conteudosDosArtigos: Conteudo[] = [
     data: "08/06/2026",
     textos: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
+      "LLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus, ex faucibus blandit tristique, magna ante dictum est, et tincidunt dolorfelis quis magna. Nunc rhoncus vel massa vel tincidunt. Aenean at mienim. Cras commodo purus purus, vel tristique enim semper a. Donecdapibus turpis vitae placerat pharetra. Vestibulum pharetra erat tellus,eu finibus lectus suscipit in. Cras lacinia in nisl condimentum congue.Nullam et quam in tellus pellentesque accumsan at id velit. Proin egetcongue diam, sit amet lobortis sem. Ut eget euismod urna. Nulla idvolutpat lacus. Vestibulum tincidunt ultrices arcu, a malesuada nislaliquam vel",
     ],
   },
   {

@@ -1,4 +1,4 @@
-import type { Estados } from "../../App";
+import type { Estados } from "../../../../App";
 
 type AExerciseProps = {
   text: string;
@@ -6,7 +6,7 @@ type AExerciseProps = {
   getExercicio: (questao: string) => void;
 };
 
-export function AExercise({ text, setArea, getExercicio }: AExerciseProps) {
+export function ExerciseLink({ text, setArea, getExercicio }: AExerciseProps) {
   return (
     <a
       onClick={() => {

@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Header } from "./components/header";
 import { Main } from "./components/main";
 import { Footer } from "./components/footer";
-import { conteudosDosArtigos } from "./matériasMock";
+import { conteudosDosArtigos } from "./mocks/matériasMock";
 import "./App.css";
-import { questionarioMock } from "./questionátiosMock";
+import { questionarioMock } from "./mocks/questionátiosMock";
 
 export type Estados = {
   area: "matérias" | "home" | "exercícios";

@@ -1,9 +1,10 @@
-import { AExercise } from "../exerciseATag";
-import { SectionHome } from "../section/sectionHome";
-import { Article } from "../article";
+import { ExerciseLink } from "./homePage/exerciseLink";
+import { SectionHome } from "../main/homePage/sectionHome";
+import { ArticleHeader } from "./articlePage/articleHeader";
 import type { Conteudo, Estados, Exercicio } from "../../App";
-import { ExerciseHeader } from "../exercisePage/exerciseHeader";
-import { ExerciseBody } from "../exercisePage/exerciseBody";
+import { ExerciseHeader } from "./exercisePage/exerciseHeader";
+import { ExerciseBody } from "../main/exercisePage/exerciseBody";
+import { ArticleBody } from "./articlePage/articleBody";
 
 type MainProps = {
   area: Estados["area"];
@@ -14,11 +15,19 @@ type MainProps = {
   getExercicio: (questao: string) => void;
 };
 
-export function Main({ area, conteudo, setArea, setConteudo, exercicio, getExercicio }: MainProps) {
+export function Main({
+  area,
+  conteudo,
+  setArea,
+  setConteudo,
+  exercicio,
+  getExercicio,
+}: MainProps) {
   if (area === "matérias") {
     return (
       <main className="p-8">
-        <Article conteudo={conteudo} />
+        <ArticleHeader conteudo={conteudo} />
+        <ArticleBody conteudo={conteudo} />
       </main>
     );
   } else if (area == "exercícios") {
@@ -39,10 +48,16 @@ export function Main({ area, conteudo, setArea, setConteudo, exercicio, getExerc
         <h2 className="text-center text-gray-700 mb-6">Exercícios</h2>
 
         <article className="grid md:grid-cols-2 gap-6">
-
-          <AExercise text="Exercício 1" setArea={setArea} getExercicio={getExercicio} />
-          <AExercise text="Exercício 2" setArea={setArea} getExercicio={getExercicio} />
-
+          <ExerciseLink
+            text="Exercício 1"
+            setArea={setArea}
+            getExercicio={getExercicio}
+          />
+          <ExerciseLink
+            text="Exercício 2"
+            setArea={setArea}
+            getExercicio={getExercicio}
+          />
         </article>
       </section>
     </main>
