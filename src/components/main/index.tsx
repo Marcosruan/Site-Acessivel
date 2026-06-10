@@ -1,5 +1,5 @@
 import { ExerciseLink } from "./homePage/exerciseLink";
-import { SectionHome } from "../main/homePage/sectionHome";
+import { SectionHome } from "./homePage/sectionHome";
 import { ArticleHeader } from "./articlePage/articleHeader";
 import type { Conteudo, Estados, Exercicio } from "../../App";
 import { ExerciseHeader } from "./exercisePage/exerciseHeader";

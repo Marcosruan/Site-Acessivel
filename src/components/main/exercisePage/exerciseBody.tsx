@@ -1,5 +1,5 @@
-import type { Exercicio } from "../../App";
-import { QuestionOption } from "../main/exercisePage/questionCard/Option";
+import type { Exercicio } from "../../../App";
+import { QuestionOption } from "../exercisePage/questionCard/Option";
 
 type ExerciseBodyProps = {
   questionNumber: string

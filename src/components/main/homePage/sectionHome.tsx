@@ -1,5 +1,5 @@
-import type { Estados } from "../../App";
-import { SectionLink } from "../main/homePage/articleLink";
+import type { Estados } from "../../../App";
+import { SectionLink } from "../homePage/articleLink"
 
 type SectionHomeProps = {
   setArea: (area: Estados["area"]) => void;
