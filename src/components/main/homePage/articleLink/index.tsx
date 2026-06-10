@@ -37,7 +37,7 @@ export function SectionLink({
             stroke-linejoin="round"
           />
         </svg>
-        <p className="text-sm font-open-sans">{materia}</p>
+        <p className="text-sm font-open-sans text-[#595959] group-hover:text-gray-900">{materia}</p>
         <svg
           className="justify-self-end self-end fill-[#5C5C5C] group-hover:fill-[#0973F0]"
           width="24"

@@ -20,9 +20,9 @@ export function ExerciseLink({ text, setArea, getExercicio }: AExerciseProps) {
       </div>
 
       <div className="p-4">
-        <h3 className="font-bold text-sm mb-2">{text}</h3>
+        <h3 className="font-bold text-sm mb-2 text-[#595959]">{text}</h3>
 
-        <p className="text-xs text-gray-600">
+        <p className="text-xs text-[#595959]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec cursus
           ex, faucibus blandit tristique, magna ante dictum.
         </p>

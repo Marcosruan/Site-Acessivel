@@ -12,13 +12,13 @@ export function Header({ titulo, area, setArea}: HeaderProps) {
     <header className = "flex bg-white items-center width-full height-[132px] gap-3 px-4 py-4 border-b-2 border-[#2187FF] shadow-[0_5px_10px_rgba(4,97,207,0.50)]">
       <img
         src={logo}
-        alt="Logo do site acessível"
+        alt="Logo do site acessível. Ícones redondos que remetem à acessibilidade saindo de um livro aberto."
         width="68px"
         height="68px"
         className="ml-24"
       />
       <a onClick={() => setArea(area)}>
-      <h1 className="font-semibold text-gray-700" >{titulo}</h1>
+      <h1 className="font-semibold text-[#595959]" >{titulo}</h1>
       </a>
       <hr />
     </header>
