@@ -1,6 +1,11 @@
 import type { FormEvent } from "react";
+import type { Estados } from "../../App";
 
-export function Footer() {
+type FooterProps = {
+  setArea: (area: Estados["area"]) => void;
+};
+
+export function Footer({setArea}: FooterProps) {
   const handleSubmitNewsletter = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert("Inscrição realizada com sucesso!");
@@ -29,12 +34,12 @@ export function Footer() {
             >
               Voltar ao topo
             </button>
-            <a 
-              href="#conteudo-principal"
+            <button 
+              onClick={() => setArea("home")}
               className="text-sm text-[#595959] hover:text-[#0973F0] transition-colors duration-200 focus:outline-2 focus:outline-[#0973F0] w-fit"
             >
               Ir para o conteúdo principal
-            </a>
+            </button>
             <span className="text-sm text-[#595959] flex items-center gap-1">
               Tradutor de Libras ativo <span>🤟</span>
             </span>

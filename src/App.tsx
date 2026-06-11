@@ -92,7 +92,7 @@ function App() {
         exercicio={state.exercicio}
         getExercicio={getExercicio}
       />
-      <Footer />
+      <Footer setArea={setArea} />
     </>
   );
 }
