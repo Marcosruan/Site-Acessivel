@@ -5,6 +5,7 @@ import { Footer } from "./components/footer";
 import { conteudosDosArtigos } from "./mocks/matériasMock";
 import "./App.css";
 import { questionarioMock } from "./mocks/questionátiosMock";
+import { AccessibilityControls } from "./components/A11y/AccessibilityControls";
 
 export type Estados = {
   area: "matérias" | "home" | "exercícios";
@@ -82,6 +83,7 @@ function App() {
   return (
     <>
       <Header area="home" setArea={setArea} titulo="Site Acessível" />
+      <AccessibilityControls />
       <Main
         area={state.area}
         conteudo={state.conteudo}
