@@ -41,6 +41,6 @@ body {
   background: #F8F8F9;
 }
 
-a:hover {
+button:hover {
   cursor: pointer;
 }

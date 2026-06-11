@@ -8,18 +8,20 @@ type AExerciseProps = {
 
 export function ExerciseLink({ text, setArea, getExercicio }: AExerciseProps) {
   return (
-    <a
+    <button 
+      type="button"
+      tabIndex={3} 
       onClick={() => {
         setArea("exercícios");
         getExercicio(text);
       }}
-      className="group bg-white border rounded-md border-[#ADACB1] hover:border-[#0973F0] flex"
+      className="group bg-white border rounded-md border-[#ADACB1] hover:border-[#0973F0] flex w-full text-left"
     >
-      <div className="w-16 flex items-center justify-center rounded-l-md text-2xl text-gray-400 bg-[#064EA4] group-hover:bg-[#0461CF] transition-colors duration-300">
+      <div className="w-16 flex items-center justify-center rounded-l-md text-2xl text-gray-400 bg-[#064EA4] group-hover:bg-[#0461CF] transition-colors duration-300 self-stretch">
         🖼️
       </div>
 
-      <div className="p-4">
+      <div className="p-4 flex-1">
         <h3 className="font-bold text-sm mb-2 text-[#595959]">{text}</h3>
 
         <p className="text-xs text-[#595959]">
@@ -27,6 +29,6 @@ export function ExerciseLink({ text, setArea, getExercicio }: AExerciseProps) {
           ex, faucibus blandit tristique, magna ante dictum.
         </p>
       </div>
-    </a>
+    </button>
   );
 }

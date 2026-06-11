@@ -7,9 +7,9 @@ type HeaderProps = {
   setArea: (area: Estados["area"]) => void;
 };
 
-export function Header({ titulo, area, setArea}: HeaderProps) {
+export function Header({ titulo, area, setArea }: HeaderProps) {
   return (
-    <header className = "flex bg-white items-center width-full height-[132px] gap-3 px-4 py-4 border-b-2 border-[#2187FF] shadow-[0_5px_10px_rgba(4,97,207,0.50)]">
+    <header className="flex bg-white items-center w-full h-[132px] gap-3 px-4 py-4 border-b-2 border-[#2187FF] shadow-[0_5px_10px_rgba(4,97,207,0.50)]">
       <img
         src={logo}
         alt="Logo do site acessível. Ícones redondos que remetem à acessibilidade saindo de um livro aberto."
@@ -17,9 +17,16 @@ export function Header({ titulo, area, setArea}: HeaderProps) {
         height="68px"
         className="ml-24"
       />
-      <a onClick={() => setArea(area)}>
-      <h1 className="font-semibold text-[#595959]" >{titulo}</h1>
-      </a>
+      
+      <button 
+        type="button"
+        tabIndex={1} 
+        onClick={() => setArea(area)}
+        className="bg-transparent border-none p-0 cursor-pointer text-left focus:outline-2 focus:outline-[#0973F0]"
+      >
+        <h1 className="font-semibold text-[#595959] text-xl">{titulo}</h1>
+      </button>
+
       <hr />
     </header>
   );
