@@ -17,7 +17,7 @@ export function SectionLink({
     <button
       type="button"
       tabIndex={2}
-      className="group w-auto bg-white border rounded-lg border-2 border-[#ADACB1] hover:border-[#0973F0] p-4 grid grid-cols-3 items-center gap-3 shadow-[1px_2px_4px_0_rgba(0,0,0,0.25)] hover:shadow-[1px_2px_4px_0_rgba(9,115,240,0.30)] text-left"
+      className="group w-auto bg-white border rounded-lg border-2 border-[#ADACB1] hover:border-[#0973F0] p-4 grid grid-cols-3 items-center gap-3 shadow-[1px_2px_4px_0_rgba(9,115,240,0.5)] hover:shadow-[1px_2px_4px_0_rgba(9,115,240,0.30)] text-left"
       onClick={() => {
         setArea(area);
         setConteudo(materia);
