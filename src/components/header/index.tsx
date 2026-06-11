@@ -20,7 +20,6 @@ export function Header({ titulo, area, setArea }: HeaderProps) {
       
       <button 
         type="button"
-        tabIndex={1} 
         onClick={() => setArea(area)}
         className="bg-transparent border-none p-0 cursor-pointer text-left focus:outline-2 focus:outline-[#0973F0]"
       >

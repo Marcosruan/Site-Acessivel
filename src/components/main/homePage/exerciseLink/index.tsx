@@ -1,16 +1,15 @@
 import type { Estados } from "../../../../App";
 
-type AExerciseProps = {
+type ExerciseProps = {
   text: string;
   setArea: (area: Estados["area"]) => void;
   getExercicio: (questao: string) => void;
 };
 
-export function ExerciseLink({ text, setArea, getExercicio }: AExerciseProps) {
+export function ExerciseLink({ text, setArea, getExercicio }: ExerciseProps) {
   return (
     <button 
       type="button"
-      tabIndex={3} 
       onClick={() => {
         setArea("exercícios");
         getExercicio(text);
@@ -22,7 +21,7 @@ export function ExerciseLink({ text, setArea, getExercicio }: AExerciseProps) {
       </div>
 
       <div className="p-4 flex-1">
-        <h3 className="font-bold text-sm mb-2 text-[#595959]">{text}</h3>
+        <p className="font-bold text-sm mb-2 text-[#595959]"><strong>{text}</strong></p>
 
         <p className="text-xs text-[#595959]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec cursus
