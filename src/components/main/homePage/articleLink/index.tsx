@@ -2,9 +2,9 @@ import type { AppState } from "../../../../App";
 
 type SectionLinkProps = {
   area: AppState["area"];
-  article: string;
+  article: string | null;
   setArea: (area: AppState["area"]) => void;
-  setContent: (article: string) => void;
+  setContent: (article: string | null) => void;
 };
 
 export function SectionLink({
@@ -37,7 +37,7 @@ export function SectionLink({
           stroke-linejoin="round"
         />
       </svg>
-      
+
       <p className="text-sm font-open-sans text-[#595959] group-hover:text-gray-900">
         {article}
       </p>

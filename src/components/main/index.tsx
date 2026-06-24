@@ -9,7 +9,7 @@ type MainProps = {
   area: AppState["area"];
   content: Content;
   setArea: (area: AppState["area"]) => void;
-  setContent: (materia: string) => void;
+  setContent: (materia: string | null) => void;
   exercise: ExerciseList;
   getExercise: (questao: string) => void;
 };
@@ -66,14 +66,18 @@ export function Main({
         <ul className="grid md:grid-cols-2 gap-6 list-none p-0">
           <li>
             <ExerciseLink
-              text="Exercício 1"
+              exerciseNumber="Exercício 1"
+              title="Acessibilidade"
+              description="Exercícios relativos à matéria sobre acessibiliade."
               setArea={setArea}
               getExercise={getExercise}
             />
           </li>
           <li>
             <ExerciseLink
-              text="Exercício 2"
+              exerciseNumber="Exercício 2"
+              title="Rede de Computadores"
+              description="Exercícios sobre redes de computadores."
               setArea={setArea}
               getExercise={getExercise}
             />

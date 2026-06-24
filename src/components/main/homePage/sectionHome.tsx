@@ -1,13 +1,14 @@
 import type { AppState } from "../../../App";
 import { SectionLink } from "../homePage/articleLink";
+import { conteudosDosArtigos } from "../../../mocks/matériasMock";
 
 type SectionHomeProps = {
   setArea: (area: AppState["area"]) => void;
-  setContent: (article: string) => void;
+  setContent: (article: string | null) => void;
 };
 
 export function SectionHome({ setArea, setContent }: SectionHomeProps) {
-  const articles = Array.from({ length: 9 }, (_, i) => `Matéria ${i + 1}`);
+  const articles = conteudosDosArtigos.map((materia) => materia.article);
 
   return (
     <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto list-none p-0">

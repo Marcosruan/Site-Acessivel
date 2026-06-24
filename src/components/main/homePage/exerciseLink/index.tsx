@@ -1,18 +1,26 @@
 import type { AppState } from "../../../../App";
 
 type ExerciseProps = {
-  text: string;
+  exerciseNumber: string;
+  title: string;
+  description: string;
   setArea: (area: AppState["area"]) => void;
   getExercise: (questao: string) => void;
 };
 
-export function ExerciseLink({ text, setArea, getExercise }: ExerciseProps) {
+export function ExerciseLink({
+  exerciseNumber,
+  title,
+  description,
+  setArea,
+  getExercise,
+}: ExerciseProps) {
   return (
-    <button 
+    <button
       type="button"
       onClick={() => {
         setArea("exercises");
-        getExercise(text);
+        getExercise(exerciseNumber);
       }}
       className="group bg-white border rounded-md border-[#ADACB1] hover:border-[#0973F0] flex w-full text-left"
     >
@@ -21,12 +29,11 @@ export function ExerciseLink({ text, setArea, getExercise }: ExerciseProps) {
       </div>
 
       <div className="p-4 flex-1">
-        <p className="font-bold text-sm mb-2 text-[#595959]"><strong>{text}</strong></p>
-
-        <p className="text-xs text-[#595959]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec cursus
-          ex, faucibus blandit tristique, magna ante dictum.
+        <p className="font-bold text-sm mb-2 text-[#595959]">
+          <strong>{title}</strong>
         </p>
+
+        <p className="text-xs text-[#595959]">{description}</p>
       </div>
     </button>
   );

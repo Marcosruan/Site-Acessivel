@@ -34,6 +34,8 @@ export type Content = {
   title: string | null;
   author: string | null;
   date: string | null;
+  image?: string
+  alt?: string
   paragraphs: string[] | null;
 };
 
@@ -73,9 +75,9 @@ function App() {
     });
   }
 
-  function setContentByArticle(articles: string) {
+  function setContentByArticle(articleName: string | null) {
     const article = conteudosDosArtigos.find(
-      (item) => item.article === articles,
+      (item) => item.article === articleName,
     );
     if (article) {
       setContent(article as unknown as Content);
