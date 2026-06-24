@@ -1,43 +1,41 @@
 import { ExerciseLink } from "./homePage/exerciseLink";
 import { SectionHome } from "./homePage/sectionHome";
 import { ArticleHeader } from "./articlePage/articleHeader";
-import type { Conteudo, Estados, Exercicio } from "../../App";
-import { ExerciseHeader } from "./exercisePage/exerciseHeader";
-import { ExerciseBody } from "../main/exercisePage/exerciseBody";
+import type { AppState, Content, ExerciseList } from "../../App";
 import { ArticleBody } from "./articlePage/articleBody";
+import { ExercisePage } from "./exercisePage/ExercisePage";
 
 type MainProps = {
-  area: Estados["area"];
-  conteudo: Conteudo;
-  setArea: (area: Estados["area"]) => void;
-  setConteudo: (materia: string) => void;
-  exercicio: Exercicio;
-  getExercicio: (questao: string) => void;
+  area: AppState["area"];
+  content: Content;
+  setArea: (area: AppState["area"]) => void;
+  setContent: (materia: string) => void;
+  exercise: ExerciseList;
+  getExercise: (questao: string) => void;
 };
 
 export function Main({
   area,
-  conteudo,
+  content,
   setArea,
-  setConteudo,
-  exercicio,
-  getExercicio,
+  setContent,
+  exercise,
+  getExercise,
 }: MainProps) {
-  if (area === "matérias") {
+  if (area === "articles") {
     return (
       <main className="p-8">
         <article className="bg-white rounded-lg shadow-sm">
-          <ArticleHeader conteudo={conteudo} />
-          <ArticleBody conteudo={conteudo} />
+          <ArticleHeader content={content} />
+          <ArticleBody content={content} />
         </article>
       </main>
     );
-  } else if (area === "exercícios") {
+  }
+
+  if (area === "exercises") {
     return (
-      <main className="px-6 py-8">
-        <ExerciseHeader />
-        <ExerciseBody questionNumber="Questão 1" exercicio={exercicio} />
-      </main>
+      <ExercisePage title="" description="" exercises={exercise.questions} />
     );
   }
 
@@ -54,7 +52,7 @@ export function Main({
           A seguir veja as matérias disponíveis. <strong>Clique</strong> em uma
           delas para saber mais sobre.
         </p>
-        <SectionHome setArea={setArea} setConteudo={setConteudo} />
+        <SectionHome setArea={setArea} setContent={setContent} />
       </section>
 
       <section className="mt-16" aria-labelledby="titulo-exercicios">
@@ -70,14 +68,14 @@ export function Main({
             <ExerciseLink
               text="Exercício 1"
               setArea={setArea}
-              getExercicio={getExercicio}
+              getExercise={getExercise}
             />
           </li>
           <li>
             <ExerciseLink
               text="Exercício 2"
               setArea={setArea}
-              getExercicio={getExercicio}
+              getExercise={getExercise}
             />
           </li>
         </ul>

@@ -1,22 +1,21 @@
+import type { ExerciseList } from "../App";
+
+type Questionario = ExerciseList
+
 export const questionarioMock = [
   {
-    questao: "Exercício 1",
-    pergunta:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec cursus, ex faucibus blandit tristique, magna ante dictum est?",
-    opcao1: "Lorem ipsum dolor sit amet.",
-    opcao2: "Consectetur adipisicing elit.",
-    opcao3: "Donec cursus.",
-    opcao4: "Ex faucibus blandit tristique.",
-    opcao5: "Magna ante dictum est.",
+    exercise: "Exercício 1",
+    questions: [
+      {    
+      question: "Quem sou eu?",
+      option1: "Ruan",
+      option2: "Jessica",
+      option3: "Donec cursus.",
+      option4: "Carlos.",
+      option5: "Nenhum.",
+      answer: "option1",
+      explanation: "É lógico que eu sou Ruan krl",
+      }
+    ]
   },
-  {
-    questao: "Exercício 2",
-    pergunta:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec cursus, ex faucibus blandit tristique, magna ante dictum est?",
-    opcao1: "Lorem ipsum dolor sit amet.",
-    opcao2: "Consectetur adipisicing elit.",
-    opcao3: "Donec cursus.",
-    opcao4: "Ex faucibus blandit tristique.",
-    opcao5: "Magna ante dictum est.",
-  },
-];
+] satisfies Questionario[];

@@ -1,23 +1,23 @@
-import type { Estados } from "../../../App";
+import type { AppState } from "../../../App";
 import { SectionLink } from "../homePage/articleLink";
 
 type SectionHomeProps = {
-  setArea: (area: Estados["area"]) => void;
-  setConteudo: (materia: string) => void;
+  setArea: (area: AppState["area"]) => void;
+  setContent: (article: string) => void;
 };
 
-export function SectionHome({ setArea, setConteudo }: SectionHomeProps) {
-  const materias = Array.from({ length: 9 }, (_, i) => `Matéria ${i + 1}`);
+export function SectionHome({ setArea, setContent }: SectionHomeProps) {
+  const articles = Array.from({ length: 9 }, (_, i) => `Matéria ${i + 1}`);
 
   return (
     <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto list-none p-0">
-      {materias.map((materia) => (
-        <li key={materia}>
+      {articles.map((article) => (
+        <li key={article}>
           <SectionLink
-            area="matérias"
-            materia={materia}
+            area="articles"
+            article={article}
             setArea={setArea}
-            setConteudo={setConteudo}
+            setContent={setContent}
           />
         </li>
       ))}

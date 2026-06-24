@@ -1,17 +1,17 @@
-import type { Estados } from "../../../../App";
+import type { AppState } from "../../../../App";
 
 type SectionLinkProps = {
-  area: Estados["area"];
-  materia: string;
-  setArea: (area: Estados["area"]) => void;
-  setConteudo: (materia: string) => void;
+  area: AppState["area"];
+  article: string;
+  setArea: (area: AppState["area"]) => void;
+  setContent: (article: string) => void;
 };
 
 export function SectionLink({
   area,
-  materia,
+  article,
   setArea,
-  setConteudo,
+  setContent,
 }: SectionLinkProps) {
   return (
     <button
@@ -19,7 +19,7 @@ export function SectionLink({
       className="group w-full bg-white border rounded-lg border-2 border-[#ADACB1] hover:border-[#0973F0] p-4 grid grid-cols-3 items-center gap-3 shadow-[1px_2px_4px_0_rgba(9,115,240,0.5)] hover:shadow-[1px_2px_4px_0_rgba(9,115,240,0.30)] text-left"
       onClick={() => {
         setArea(area);
-        setConteudo(materia);
+        setContent(article);
       }}
     >
       <svg
@@ -39,7 +39,7 @@ export function SectionLink({
       </svg>
       
       <p className="text-sm font-open-sans text-[#595959] group-hover:text-gray-900">
-        {materia}
+        {article}
       </p>
 
       <svg

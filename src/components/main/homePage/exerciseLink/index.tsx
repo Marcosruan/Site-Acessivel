@@ -1,18 +1,18 @@
-import type { Estados } from "../../../../App";
+import type { AppState } from "../../../../App";
 
 type ExerciseProps = {
   text: string;
-  setArea: (area: Estados["area"]) => void;
-  getExercicio: (questao: string) => void;
+  setArea: (area: AppState["area"]) => void;
+  getExercise: (questao: string) => void;
 };
 
-export function ExerciseLink({ text, setArea, getExercicio }: ExerciseProps) {
+export function ExerciseLink({ text, setArea, getExercise }: ExerciseProps) {
   return (
     <button 
       type="button"
       onClick={() => {
-        setArea("exercícios");
-        getExercicio(text);
+        setArea("exercises");
+        getExercise(text);
       }}
       className="group bg-white border rounded-md border-[#ADACB1] hover:border-[#0973F0] flex w-full text-left"
     >

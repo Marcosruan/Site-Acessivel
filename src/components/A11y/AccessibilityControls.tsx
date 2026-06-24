@@ -5,26 +5,22 @@ const MAX_SIZE = 24;
 const DEFAULT_SIZE = 16;
 
 export function AccessibilityControls() {
-  const [fontSize, setFontSize] = useState(DEFAULT_SIZE);
+  const [fontSize, setFontSize] = useState(() => {
+    const saved = localStorage.getItem("font-size");
+    const size = saved ? Number(saved) : DEFAULT_SIZE;
+
+    return Number.isFinite(size) ? size : DEFAULT_SIZE;
+  });
 
   useEffect(() => {
-    const saved = localStorage.getItem("font-size");
-
-    if (saved) {
-      const size = Number(saved);
-      setFontSize(size);
-      document.documentElement.style.fontSize = `${size}px`;
-    }
-  }, []);
+    document.documentElement.style.fontSize = `${fontSize}px`;
+    localStorage.setItem("font-size", String(fontSize));
+  }, [fontSize]);
 
   const changeFontSize = (newSize: number) => {
     if (newSize < MIN_SIZE || newSize > MAX_SIZE) return;
 
     setFontSize(newSize);
-
-    document.documentElement.style.fontSize = `${newSize}px`;
-
-    localStorage.setItem("font-size", String(newSize));
   };
 
 
