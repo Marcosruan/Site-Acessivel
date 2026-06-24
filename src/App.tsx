@@ -75,7 +75,7 @@ function App() {
 
   function setContentByArticle(articles: string) {
     const article = conteudosDosArtigos.find(
-      (item) => item.materia === articles,
+      (item) => item.article === articles,
     );
     if (article) {
       setContent(article as unknown as Content);
