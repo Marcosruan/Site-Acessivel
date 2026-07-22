@@ -41,7 +41,7 @@ O site é composto por três páginas:
 
 ## 👥 Autores
 
-- Carlos Henrique da Cunha Oliveira
+- Carlos Henrique da Cunha Oliveira [@Carlos](https://github.com/Kafkarlos) [@carlos](https://www.linkedin.com/in/carlos-cunha-oliv/)
 - Marcos Ruan Vieira de Figueiredo [@Marcosruan](https://github.com/Marcosruan) [@marcosruan](https://www.linkedin.com/in/marcosruan/)
 
 
