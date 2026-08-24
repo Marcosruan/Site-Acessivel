@@ -1,4 +1,4 @@
-import type { Content } from "../../../App";
+import type { Content } from "../../../../App";
 
 type ArticleHeaderProps = {
   content: Content;
@@ -12,7 +12,7 @@ export function ArticleHeader({ content }: ArticleHeaderProps) {
       <h2 className="mb-2 text-2xl font-bold text-[#1F1F26]">
         {content.title}
       </h2>
-      
+
       <div className="space-y-1 text-xs text-slate-600">
         <p className="text-[#595959]">Autor: {content.author}</p>
         <p className="text-[#595959]">Data: {content.date}</p>

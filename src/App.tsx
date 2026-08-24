@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Header } from "./components/header";
-import { Main } from "./components/main";
-import { Footer } from "./components/footer";
-import { conteudosDosArtigos } from "./mocks/matériasMock";
+import { Header } from "./components/layout/header";
+import { Main } from "./components/layout/main";
+import { Footer } from "./components/layout/footer";
+import { conteudosDosArtigos } from "./data/mocks/matériasMock";
 import "./App.css";
-import { questionarioMock } from "./mocks/questionátiosMock";
-import { AccessibilityControls } from "./components/A11y/AccessibilityControls";
+import { questionarioMock } from "./data/mocks/questionátiosMock";
+import { AccessibilityControls } from "./components/common/A11y/AccessibilityControls";
 
 export type AppState = {
   area: "articles" | "home" | "exercises";
@@ -34,8 +34,8 @@ export type Content = {
   title: string | null;
   author: string | null;
   date: string | null;
-  image?: string
-  alt?: string
+  image?: string;
+  alt?: string;
   paragraphs: string[] | null;
 };
 

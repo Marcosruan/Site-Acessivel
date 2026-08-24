@@ -1,6 +1,6 @@
-import type { AppState } from "../../../App";
-import { SectionLink } from "../homePage/articleLink";
-import { conteudosDosArtigos } from "../../../mocks/matériasMock";
+import type { AppState } from "../../../../App";
+import { SectionLink } from "./articleLink";
+import { conteudosDosArtigos } from "../../../../data/mocks/matériasMock";
 
 type SectionHomeProps = {
   setArea: (area: AppState["area"]) => void;

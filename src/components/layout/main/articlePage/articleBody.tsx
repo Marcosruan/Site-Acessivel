@@ -1,4 +1,4 @@
-import type { Content } from "../../../App";
+import type { Content } from "../../../../App";
 
 type ArticleBodyProps = {
   content: Content;

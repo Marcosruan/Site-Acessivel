@@ -1,7 +1,7 @@
 import { ExerciseLink } from "./homePage/exerciseLink";
 import { SectionHome } from "./homePage/sectionHome";
 import { ArticleHeader } from "./articlePage/articleHeader";
-import type { AppState, Content, ExerciseList } from "../../App";
+import type { AppState, Content, ExerciseList } from "../../../App";
 import { ArticleBody } from "./articlePage/articleBody";
 import { ExercisePage } from "./exercisePage/ExercisePage";
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import type { Exercise } from "../../../App";
-import { QuestionOption } from "../exercisePage/questionCard/Option";
+import type { Exercise } from "../../../../App";
+import { QuestionOption } from "./questionCard/Option";
 
 type ExerciseBodyProps = {
   questionNumber: string;
@@ -11,7 +11,13 @@ type ExerciseBodyProps = {
   onFinish: () => void;
 };
 
-const OPTIONS = ["option1", "option2", "option3", "option4", "option5"] as const;
+const OPTIONS = [
+  "option1",
+  "option2",
+  "option3",
+  "option4",
+  "option5",
+] as const;
 
 export function ExerciseBody({
   questionNumber,
@@ -58,9 +64,7 @@ export function ExerciseBody({
             <span className="mt-0.5 text-blue-600" aria-hidden="true">
               i
             </span>
-            <p>
-              Use as setas do teclado para navegar entre as opções.
-            </p>
+            <p>Use as setas do teclado para navegar entre as opções.</p>
           </div>
         )}
 

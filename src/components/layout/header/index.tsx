@@ -1,5 +1,5 @@
-import type { AppState } from "../../App";
-import logo from "../../assets/logo_do_site_acessivel.png";
+import type { AppState } from "../../../App";
+import logo from "../../../assets/images/logo_do_site_acessivel.png";
 
 type HeaderProps = {
   title: string;
@@ -17,8 +17,8 @@ export function Header({ title, area, setArea }: HeaderProps) {
         height="68px"
         className="ml-24"
       />
-      
-      <button 
+
+      <button
         type="button"
         onClick={() => setArea(area)}
         className="bg-transparent border-none p-0 cursor-pointer text-left focus:outline-2 focus:outline-[#0973F0]"

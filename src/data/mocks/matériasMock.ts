@@ -1,4 +1,4 @@
-import type { Content } from "../App";
+import type { Content } from "../../App";
 
 export const conteudosDosArtigos: Content[] = [
   {
@@ -6,7 +6,7 @@ export const conteudosDosArtigos: Content[] = [
     title: "Introdução ao VLibras",
     author: "Marcos",
     date: "07/06/2026",
-    image: "src/assets/acessibilidade_digital.png",
+    image: "src/assets/images/acessibilidade_digital.png",
     alt: "Ícones brancos de acessibilidade (deficiência visual, física e auditiva) alinhados em fundo azul. Ao centro, um círculo destaca o símbolo universal da acessibilidade sendo clicado por um cursor de mouse.",
     paragraphs: [
       "Para tornar nosso conteúdo acessível a todos, este site conta com a integração do VLibras, uma ferramenta gratuita que traduz conteúdos digitais (textos e vídeos) do português para a Língua Brasileira de Sinais (Libras).",
@@ -18,7 +18,7 @@ export const conteudosDosArtigos: Content[] = [
     title: "Introdução às Redes de Computadores",
     author: "Autor",
     date: "24/06/2026",
-    image: "src/assets/tipos-de-redes-de-computadores-3.webp",
+    image: "src/assets/images/tipos-de-redes-de-computadores-3.webp",
     alt: "Fileira de cinco notebooks com mapas-múndi azuis nas telas. Cabos azuis saem de trás de cada computador e sobem verticalmente, representando uma rede conectada.",
     paragraphs: [
       "As redes de computadores permitem a comunicação entre dispositivos como computadores, smartphones, servidores e impressoras. Elas são fundamentais para o funcionamento da internet e para o compartilhamento de informações em empresas, escolas e residências. Uma rede pode ser composta por poucos dispositivos conectados localmente ou por milhões de equipamentos distribuídos ao redor do mundo.",

@@ -1,4 +1,4 @@
-import type { AppState } from "../../../../App";
+import type { AppState } from "../../../../../App";
 
 type ExerciseProps = {
   exerciseNumber: string;
