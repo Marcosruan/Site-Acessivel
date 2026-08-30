@@ -1,6 +1,5 @@
 # Arquivos de ambiente e segredos
 .env
-.env.*
 
 # Volumes de banco de dados do Docker
 pgdata/
