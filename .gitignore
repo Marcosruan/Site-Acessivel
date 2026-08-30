@@ -1,0 +1,13 @@
+# Arquivos de ambiente e segredos
+.env
+.env.*
+
+# Volumes de banco de dados do Docker
+pgdata/
+docker-data/
+
+# IDE e Sistema Operacional
+.vscode/
+.idea/
+.DS_Store
+*.log
