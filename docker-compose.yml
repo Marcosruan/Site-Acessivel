@@ -1,44 +1,4 @@
 services:
-  db:
-    image: postgres:16-alpine
-    container_name: site-acessivel-db
-    restart: unless-stopped
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_DB: site_acessivel
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d site_acessivel"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: site-acessivel-backend
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-    working_dir: /app
-    command: sh -c "npm install && npm run start:dev"
-    environment:
-      PORT: 3000
-      CHOKIDAR_USEPOLLING: "true"
-      DATABASE_URL: postgres://postgres:postgres@db:5432/site_acessivel
-    depends_on:
-      db:
-        condition: service_healthy
-    stdin_open: true
-    tty: true
-
   frontend:
     build:
       context: ./frontend
@@ -52,11 +12,5 @@ services:
     working_dir: /app
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
     environment:
-      VITE_API_URL: http://backend:3000
     stdin_open: true
     tty: true
-    depends_on:
-      - backend
-
-volumes:
-  postgres_data:
