@@ -1,16 +1,17 @@
 services:
   frontend:
     build:
-      context: ./frontend
+      context: .
       dockerfile: Dockerfile
     container_name: site-acessivel-frontend
     ports:
       - "5173:5173"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
     environment:
+      CHOKIDAR_USEPOLLING: "true"
     stdin_open: true
     tty: true
