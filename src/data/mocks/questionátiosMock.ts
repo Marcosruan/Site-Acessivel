@@ -1,4 +1,4 @@
-import type { ExerciseList } from "../App";
+import type { ExerciseList } from "../../App";
 
 type Questionario = ExerciseList;
 
