@@ -25,7 +25,7 @@ export function AccessibilityControls() {
 
 
   return (
-    <fieldset className="flex fixed items-center right-0 top-5 px-4 py-2">
+    <fieldset className="fixed right-0 top-5 z-50 flex items-center px-4 py-2">
       <legend className="sr-only">Controle de tamanho da fonte</legend>
 
       <button

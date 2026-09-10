@@ -1,41 +1,45 @@
 import type { Content } from "../../../../App";
+import SlideHeader from "./components/layout/SlideHeader";
 
 type ArticleBodyProps = {
   content: Content;
 };
 
 export function ArticleBody({ content }: ArticleBodyProps) {
-  return (
-    <div className="px-7 py-8">
-      <p className="mb-8 leading-7 text-[#595959]">
-        {content.paragraphs?.at(0)}
-      </p>
+  const slideHeader = content.slideHeader ?? {
+    disciplina: content.article ?? "Artigo",
+    titulo: content.title ?? "",
+    subtitulo: content.date ?? undefined,
+    autor: content.author ?? undefined,
+  };
 
-      <figure className="mb-8" aria-labelledby="legenda-imagem">
-        {content.image ? (
-          <img
-            src={content.image}
-            alt={content.alt ?? "Imagem do artigo"}
-            className="h-52 w-full object-cover"
-          />
-        ) : (
-          <div
-            className="flex h-52 items-center justify-center bg-slate-200"
-            role="img"
-            aria-label="Espaço demonstrativo da imagem do artigo"
-          >
-            <span className="text-5xl text-slate-400" aria-hidden="true">
-              🖼️
-            </span>
-          </div>
+  return (
+    <>
+      <SlideHeader
+        textos={slideHeader}
+        cores={slideHeader.cores}
+        numeroPagina={slideHeader.numeroPagina}
+      />
+
+      <div className="px-7 py-8">
+        {content.image && (
+          <figure className="mb-8">
+            <img
+              src={content.image}
+              alt={content.alt ?? "Imagem do artigo"}
+              className="h-52 w-full object-cover"
+            />
+          </figure>
         )}
-      </figure>
-      {content.paragraphs?.map((parag, index) => {
-        if (index === 0) {
-          return null;
-        }
-        return <p className="leading-7 text-[#595959]">{parag}</p>;
-      })}
-    </div>
+
+        <div className="space-y-4">
+          {content.paragraphs?.map((paragraph) => (
+            <p key={paragraph} className="leading-7 text-[#595959]">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }

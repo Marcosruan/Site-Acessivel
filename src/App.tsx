@@ -37,6 +37,29 @@ export type Content = {
   image?: string;
   alt?: string;
   paragraphs: string[] | null;
+  slideHeader?: {
+    disciplina: string;
+    parte?: string;
+    titulo: string;
+    subtitulo?: string;
+    autor?: string;
+    instituicao?: string;
+    sigla?: string;
+    instituicaoSigla?: string;
+    rodapeEsquerda?: string;
+    cores?: {
+      corFundo?: string;
+      corCirculoMedio?: string;
+      corCirculoClaro?: string;
+      corDestaque?: string;
+      corTextoDestaque?: string;
+      corTitulo?: string;
+      corSubtitulo?: string;
+      corAutor?: string;
+      corTextoSecundario?: string;
+    };
+    numeroPagina?: number;
+  };
 };
 
 function App() {

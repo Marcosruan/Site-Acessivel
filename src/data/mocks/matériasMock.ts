@@ -34,9 +34,21 @@ export const conteudosDosArtigos: Content[] = [
   },
   {
     article: "Matéria 3",
-    title: "Título da matéria 3",
+    title: "Introdução à Linguagem Java",
     author: "Carlos",
     date: "09/06/2026",
+    slideHeader: {
+      disciplina: "Linguagem de Programação II",
+      parte: "PARTE 1 DE 6",
+      titulo: "Introdução à Linguagem Java",
+      subtitulo:
+        "Tópicos 01 e 02 — da história da linguagem à entrada e saída de dados",
+      autor: "Profª Drª Mikaelle Oliveira Santos Gomes",
+      instituicao: "Universidade Estadual da Paraíba — UEPB",
+      sigla: "JAVA",
+      instituicaoSigla: "UEPB",
+      numeroPagina: 1,
+    },
     paragraphs: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
@@ -44,9 +56,25 @@ export const conteudosDosArtigos: Content[] = [
   },
   {
     article: "Matéria 4",
-    title: "Título da matéria 4",
+    title: "Modelagem Entidade-Relacionamento",
     author: "Miguel",
     date: "10/06/2026",
+    slideHeader: {
+      disciplina: "Banco de Dados I",
+      parte: "PARTE 3 DE 8",
+      titulo: "Modelagem Entidade-Relacionamento",
+      subtitulo: "Do diagrama conceitual ao modelo lógico",
+      autor: "Prof. Dr. João Alves",
+      instituicao: "Universidade Estadual da Paraíba — UEPB",
+      sigla: "BD1",
+      instituicaoSigla: "UEPB",
+      numeroPagina: 3,
+      cores: {
+        corDestaque: "#FF8A3D",
+        corCirculoMedio: "#5A2E0C",
+        corCirculoClaro: "#8B4A17",
+      },
+    },
     paragraphs: [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur quisquam voluptatibus. Ullam optio voluptatum nostrum molestias praesentium? Et labore quis consequatur consequuntur ex saepe rem tempore error alias eaque!",

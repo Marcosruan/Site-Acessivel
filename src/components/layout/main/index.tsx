@@ -1,9 +1,8 @@
-import { ExerciseLink } from "./homePage/exerciseLink";
-import { SectionHome } from "./homePage/sectionHome";
-import { ArticleHeader } from "./articlePage/articleHeader";
+import { ExerciseLink } from "./home/exerciseLink";
+import { SectionHome } from "./home/sectionHome";
 import type { AppState, Content, ExerciseList } from "../../../App";
-import { ArticleBody } from "./articlePage/articleBody";
-import { ExercisePage } from "./exercisePage/ExercisePage";
+import { ArticleBody } from "./subjects/articleBody";
+import { ExercisePage } from "./exercises/ExercisePage";
 
 type MainProps = {
   area: AppState["area"];
@@ -26,7 +25,6 @@ export function Main({
     return (
       <main className="p-8">
         <article className="bg-white rounded-lg shadow-sm">
-          <ArticleHeader content={content} />
           <ArticleBody content={content} />
         </article>
       </main>
