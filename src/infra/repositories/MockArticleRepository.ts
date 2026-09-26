@@ -1,8 +1,8 @@
 import type { Article } from "../../domain/models/content";
-import type { ArticleRepository } from "../../domain/repositories/ArticleRepository";
+import type { IArticleRepository } from "../../domain/repositories/ArticleRepository";
 import { conteudosDosArtigos } from "../mocks/matériasMock";
 
-export class MockArticleRepository implements ArticleRepository {
+export class MockArticleRepository implements IArticleRepository {
   findAll(): Article[] {
     return conteudosDosArtigos;
   }
