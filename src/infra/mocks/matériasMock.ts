@@ -1,6 +1,6 @@
-import type { Content } from "../../App";
+import type { Article } from "../../domain/models/content";
 
-export const conteudosDosArtigos: Content[] = [
+export const conteudosDosArtigos: Article[] = [
   {
     article: "Acessibilidade",
     title: "Introdução ao VLibras",

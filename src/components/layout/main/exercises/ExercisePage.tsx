@@ -1,12 +1,12 @@
 import { useState } from "react";
-import type { Exercise } from "../../../../App";
+import type { ExerciseQuestion } from "../../../../domain/models/content";
 import { ExerciseHeader } from "./exerciseHeader";
 import { ExerciseBody } from "./exerciseBody";
 
 type ExercisePageProps = {
   title: string;
   description: string;
-  exercises: Exercise[];
+  exercises: ExerciseQuestion[];
 };
 
 export function ExercisePage({

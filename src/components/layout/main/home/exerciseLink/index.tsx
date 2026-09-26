@@ -1,10 +1,10 @@
-import type { AppState } from "../../../../../App";
+import type { AppArea } from "../../../../../domain/models/content";
 
 type ExerciseProps = {
   exerciseNumber: string;
   title: string;
   description: string;
-  setArea: (area: AppState["area"]) => void;
+  setArea: (area: AppArea) => void;
   getExercise: (questao: string) => void;
 };
 

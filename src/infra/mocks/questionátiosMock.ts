@@ -1,6 +1,4 @@
-import type { ExerciseList } from "../../App";
-
-type Questionario = ExerciseList;
+import type { ExerciseCollection } from "../../domain/models/content";
 
 export const questionarioMock = [
   {
@@ -109,4 +107,4 @@ export const questionarioMock = [
       },
     ],
   },
-] satisfies Questionario[];
+] satisfies ExerciseCollection[];

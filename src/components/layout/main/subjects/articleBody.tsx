@@ -1,8 +1,8 @@
-import type { Content } from "../../../../App";
+import type { Article } from "../../../../domain/models/content";
 import SlideHeader from "./components/layout/SlideHeader";
 
 type ArticleBodyProps = {
-  content: Content;
+  content: Article;
 };
 
 export function ArticleBody({ content }: ArticleBodyProps) {

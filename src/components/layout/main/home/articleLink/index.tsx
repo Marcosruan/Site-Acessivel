@@ -1,9 +1,9 @@
-import type { AppState } from "../../../../../App";
+import type { AppArea } from "../../../../../domain/models/content";
 
 type SectionLinkProps = {
-  area: AppState["area"];
+  area: AppArea;
   article: string | null;
-  setArea: (area: AppState["area"]) => void;
+  setArea: (area: AppArea) => void;
   setContent: (article: string | null) => void;
 };
 

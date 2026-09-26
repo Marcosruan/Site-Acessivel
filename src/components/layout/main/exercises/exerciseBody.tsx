@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import type { Exercise } from "../../../../App";
+import type { ExerciseQuestion } from "../../../../domain/models/content";
 import { QuestionOption } from "./questionCard/Option";
 
 type ExerciseBodyProps = {
   questionNumber: string;
-  exercise: Exercise;
+  exercise: ExerciseQuestion;
   questionIndex: number;
   isLastQuestion: boolean;
   onNext: () => void;

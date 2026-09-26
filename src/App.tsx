@@ -2,139 +2,59 @@ import { useState } from "react";
 import { Header } from "./components/layout/header";
 import { Main } from "./components/layout/main";
 import { Footer } from "./components/layout/footer";
-import { conteudosDosArtigos } from "./data/mocks/matériasMock";
 import "./App.css";
-import { questionarioMock } from "./data/mocks/questionátiosMock";
 import { AccessibilityControls } from "./components/common/A11y/AccessibilityControls";
+import type {
+  AppArea,
+  Article,
+  ExerciseCollection,
+} from "./domain/models/content";
+import { findArticle, listArticles } from "./application/use-cases/articles";
+import { findExercise, listExercises } from "./application/use-cases/exercises";
+import { MockArticleRepository } from "./infra/repositories/MockArticleRepository";
+import { MockExerciseRepository } from "./infra/repositories/MockExerciseRepository";
 
-export type AppState = {
-  area: "articles" | "home" | "exercises";
-  content: Content;
-  exercises: ExerciseList;
-};
-
-export type ExerciseList = {
-  exercise: string | null;
-  questions: Exercise[];
-};
-
-export type Exercise = {
-  question: string | null;
-  option1: string | null;
-  option2: string | null;
-  option3: string | null;
-  option4: string | null;
-  option5: string | null;
-  answer: "option1" | "option2" | "option3" | "option4" | "option5" | null;
-  explanation?: string;
-};
-
-export type Content = {
-  article: string | null;
-  title: string | null;
-  author: string | null;
-  date: string | null;
-  image?: string;
-  alt?: string;
-  paragraphs: string[] | null;
-  slideHeader?: {
-    disciplina: string;
-    parte?: string;
-    titulo: string;
-    subtitulo?: string;
-    autor?: string;
-    instituicao?: string;
-    sigla?: string;
-    instituicaoSigla?: string;
-    rodapeEsquerda?: string;
-    cores?: {
-      corFundo?: string;
-      corCirculoMedio?: string;
-      corCirculoClaro?: string;
-      corDestaque?: string;
-      corTextoDestaque?: string;
-      corTitulo?: string;
-      corSubtitulo?: string;
-      corAutor?: string;
-      corTextoSecundario?: string;
-    };
-    numeroPagina?: number;
-  };
-};
+const articleRepository = new MockArticleRepository();
+const exerciseRepository = new MockExerciseRepository();
 
 function App() {
-  const [state, setState] = useState<AppState>({
-    area: "home",
-    content: {
-      article: null,
-      title: null,
-      author: null,
-      date: null,
-      paragraphs: null,
-    },
-    exercises: {
-      exercise: null,
-      questions: [
-        {
-          question: null,
-          option1: null,
-          option2: null,
-          option3: null,
-          option4: null,
-          option5: null,
-          answer: null,
-        },
-      ],
-    },
-  });
+  const [area, setArea] = useState<AppArea>("home");
+  const [content, setContent] = useState<Article | null>(null);
+  const [exercise, setExercise] = useState<ExerciseCollection | null>(null);
 
-  function setArea(area: AppState["area"]) {
-    setState((prev) => ({ ...prev, area }));
+  const articles = listArticles(articleRepository);
+  const exercises = listExercises(exerciseRepository);
+
+  function changeArea(nextArea: AppArea) {
+    setArea(nextArea);
   }
 
-  function setContent(article: Content) {
-    setState((prev) => {
-      return { ...prev, content: article };
-    });
+  function selectArticle(articleName: string | null) {
+    if (!articleName) return;
+    const article = findArticle(articleRepository, articleName);
+    if (article) setContent(article);
   }
 
-  function setContentByArticle(articleName: string | null) {
-    const article = conteudosDosArtigos.find(
-      (item) => item.article === articleName,
-    );
-    if (article) {
-      setContent(article as unknown as Content);
-    }
-  }
-
-  function setExercise(exercises: ExerciseList) {
-    setState((prev) => {
-      return { ...prev, exercises };
-    });
-  }
-
-  function getExercise(exerciseName: string) {
-    const exercise = questionarioMock.find(
-      (item) => item.exercise === exerciseName,
-    );
-    if (exercise) {
-      setExercise(exercise as unknown as ExerciseList);
-    }
+  function selectExercise(exerciseName: string) {
+    const selectedExercise = findExercise(exerciseRepository, exerciseName);
+    if (selectedExercise) setExercise(selectedExercise);
   }
 
   return (
     <>
-      <Header area="home" setArea={setArea} title="Site Acessível" />
+      <Header area={area} setArea={changeArea} title="Site Acessível" />
       <AccessibilityControls />
       <Main
-        area={state.area}
-        content={state.content}
-        setArea={setArea}
-        setContent={setContentByArticle}
-        exercise={state.exercises}
-        getExercise={getExercise}
+        area={area}
+        articles={articles}
+        content={content}
+        setArea={changeArea}
+        setContent={selectArticle}
+        exercises={exercises}
+        exercise={exercise}
+        getExercise={selectExercise}
       />
-      <Footer setArea={setArea} />
+      <Footer setArea={changeArea} />
     </>
   );
 }

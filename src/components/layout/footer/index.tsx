@@ -1,8 +1,8 @@
 import type { FormEvent } from "react";
-import type { AppState } from "../../../App";
+import type { AppArea } from "../../../domain/models/content";
 
 type FooterProps = {
-  setArea: (area: AppState["area"]) => void;
+  setArea: (area: AppArea) => void;
 };
 
 export function Footer({ setArea }: FooterProps) {

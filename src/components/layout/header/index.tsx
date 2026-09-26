@@ -1,10 +1,10 @@
-import type { AppState } from "../../../App";
+import type { AppArea } from "../../../domain/models/content";
 import logo from "../../../assets/images/logo_do_site_acessivel.png";
 
 type HeaderProps = {
   title: string;
-  area: AppState["area"];
-  setArea: (area: AppState["area"]) => void;
+  area: AppArea;
+  setArea: (area: AppArea) => void;
 };
 
 export function Header({ title, area, setArea }: HeaderProps) {

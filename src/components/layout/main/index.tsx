@@ -1,27 +1,35 @@
 import { ExerciseLink } from "./home/exerciseLink";
 import { SectionHome } from "./home/sectionHome";
-import type { AppState, Content, ExerciseList } from "../../../App";
+import type {
+  AppArea,
+  Article,
+  ExerciseCollection,
+} from "../../../domain/models/content";
 import { ArticleBody } from "./subjects/articleBody";
 import { ExercisePage } from "./exercises/ExercisePage";
 
 type MainProps = {
-  area: AppState["area"];
-  content: Content;
-  setArea: (area: AppState["area"]) => void;
+  area: AppArea;
+  articles: Article[];
+  content: Article | null;
+  setArea: (area: AppArea) => void;
   setContent: (materia: string | null) => void;
-  exercise: ExerciseList;
+  exercises: ExerciseCollection[];
+  exercise: ExerciseCollection | null;
   getExercise: (questao: string) => void;
 };
 
 export function Main({
   area,
+  articles,
   content,
   setArea,
   setContent,
+  exercises,
   exercise,
   getExercise,
 }: MainProps) {
-  if (area === "articles") {
+  if (area === "articles" && content) {
     return (
       <main className="p-8">
         <article className="bg-white rounded-lg shadow-sm">
@@ -31,11 +39,27 @@ export function Main({
     );
   }
 
-  if (area === "exercises") {
+  if (area === "exercises" && exercise) {
     return (
-      <ExercisePage title="" description="" exercises={exercise.questions} />
+      <ExercisePage
+        key={exercise.exercise}
+        title={exercise.exercise ?? "Exercício"}
+        description="Responda às questões para concluir este exercício."
+        exercises={exercise.questions}
+      />
     );
   }
+
+  const exerciseDetails: Record<string, { title: string; description: string }> = {
+    "Exercício 1": {
+      title: "Acessibilidade",
+      description: "Exercícios relativos à matéria sobre acessibilidade.",
+    },
+    "Exercício 2": {
+      title: "Rede de Computadores",
+      description: "Exercícios sobre redes de computadores.",
+    },
+  };
 
   return (
     <main className="p-8">
@@ -50,7 +74,11 @@ export function Main({
           A seguir veja as matérias disponíveis. <strong>Clique</strong> em uma
           delas para saber mais sobre.
         </p>
-        <SectionHome setArea={setArea} setContent={setContent} />
+        <SectionHome
+          articles={articles}
+          setArea={setArea}
+          setContent={setContent}
+        />
       </section>
 
       <section className="mt-16" aria-labelledby="titulo-exercicios">
@@ -62,24 +90,25 @@ export function Main({
         </h2>
 
         <ul className="grid md:grid-cols-2 gap-6 list-none p-0">
-          <li>
-            <ExerciseLink
-              exerciseNumber="Exercício 1"
-              title="Acessibilidade"
-              description="Exercícios relativos à matéria sobre acessibiliade."
-              setArea={setArea}
-              getExercise={getExercise}
-            />
-          </li>
-          <li>
-            <ExerciseLink
-              exerciseNumber="Exercício 2"
-              title="Rede de Computadores"
-              description="Exercícios sobre redes de computadores."
-              setArea={setArea}
-              getExercise={getExercise}
-            />
-          </li>
+          {exercises.map(({ exercise: exerciseName }) => {
+            if (!exerciseName) return null;
+            const details = exerciseDetails[exerciseName] ?? {
+              title: exerciseName,
+              description: "Responda às questões deste exercício.",
+            };
+
+            return (
+              <li key={exerciseName}>
+                <ExerciseLink
+                  exerciseNumber={exerciseName}
+                  title={details.title}
+                  description={details.description}
+                  setArea={setArea}
+                  getExercise={getExercise}
+                />
+              </li>
+            );
+          })}
         </ul>
       </section>
     </main>
