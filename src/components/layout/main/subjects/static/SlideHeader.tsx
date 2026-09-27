@@ -1,5 +1,5 @@
 import React from "react";
-import type { SlideHeaderProps } from '../../types/SlideHeader';
+import type { SlideHeaderProps } from '../types/SlideHeader';
 
 const SlideHeader: React.FC<SlideHeaderProps> = ({
   textos,

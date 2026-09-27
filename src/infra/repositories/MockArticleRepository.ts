@@ -1,6 +1,6 @@
 import type { Article } from "../../domain/models/content";
 import type { IArticleRepository } from "../../domain/repositories/ArticleRepository";
-import { conteudosDosArtigos } from "../mocks/matériasMock";
+import { conteudosDosArtigos } from "../data/matérias";
 
 export class MockArticleRepository implements IArticleRepository {
   findAll(): Article[] {

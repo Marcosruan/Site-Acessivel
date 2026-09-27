@@ -1,6 +1,6 @@
 import type { ExerciseCollection } from "../../domain/models/content";
 import type { IExerciseRepository } from "../../domain/repositories/ExerciseRepository";
-import { questionarioMock } from "../mocks/questionátiosMock";
+import { questionarioMock } from "../data/exercicios";
 
 export class MockExerciseRepository implements IExerciseRepository {
   findAll(): ExerciseCollection[] {

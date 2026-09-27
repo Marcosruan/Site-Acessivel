@@ -1,5 +1,5 @@
 import React from "react";
-import type { ReferencesSlideProps } from '../../types/SlideReferences';
+import type { ReferencesSlideProps } from '../types/SlideReferences';
 
 const ReferencesSlide: React.FC<ReferencesSlideProps> = ({
   textos,

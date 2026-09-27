@@ -5,7 +5,7 @@ import type {
   Article,
   ExerciseCollection,
 } from "../../../domain/models/content";
-import { ArticleBody } from "./subjects/articleBody";
+import { PageRenderer } from "./subjects/dinamic";
 import { ExercisePage } from "./exercises/ExercisePage";
 
 type MainProps = {
@@ -32,9 +32,7 @@ export function Main({
   if (area === "articles" && content) {
     return (
       <main className="p-8">
-        <article className="bg-white rounded-lg shadow-sm">
-          <ArticleBody content={content} />
-        </article>
+        <PageRenderer page={content} />
       </main>
     );
   }

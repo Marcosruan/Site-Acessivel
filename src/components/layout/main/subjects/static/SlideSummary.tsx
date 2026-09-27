@@ -1,5 +1,5 @@
 import React from "react";
-import type { SummarySlideProps } from '../../types/SlideSummary';
+import type { SummarySlideProps } from '../types/SlideSummary';
 
 const SummarySlide: React.FC<SummarySlideProps> = ({
   textos,
